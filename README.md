@@ -31,3 +31,12 @@ To do:
 - Base example: <https://learn.adafruit.com/adafruit-matrixportal-m4/internet-connect>
 - MatrixPortal API: <https://docs.circuitpython.org/projects/matrixportal/en/latest/api.htm>
 - MiniMQTT API: <https://docs.circuitpython.org/projects/minimqtt/en/stable/api.html>
+
+## Hardware
+
+- Adafruit MatrixPortal
+- HUB75 Led Matrix Panel (64x32)
+
+## How to flash/install
+
+Follow this excelent tutorial: <https://learn.adafruit.com/adafruit-matrixportal-m4/prep-the-matrixportal>
