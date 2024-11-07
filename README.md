@@ -14,16 +14,13 @@ Done:
 
 - Subscribe to a configurable topic
 - Set status light in neopixel
-
-Work in progress:
-
-- Manage reconnections
+- Optimize text size, position
+- Scroll when long text
+- Different text color depending on (json) message
 
 To do:
 
-- Optimize text size, position
-- Different text color depending on (json) message
-- No default message ("waiting...")
+- Manage MQTT connection errors
 
 ## References
 
@@ -36,6 +33,35 @@ To do:
 
 - Adafruit MatrixPortal
 - HUB75 Led Matrix Panel (64x32)
+
+## Behaviour
+
+1. Network connection (prints MAC and IP)
+2. Matrix Led initialization
+3. MQTT connection initialization
+4. Main loop: wait for MQTT messages and manage text scroll if necessary
+
+On message received, update display centering message on screen.
+
+Message format expected:
+
+```json
+{"message": "Here text", "priority":"high"}
+```
+
+Priorities are:
+
+- high (red)
+- medium (yellow)
+- low (green)
+- default (green)
+
+Neopixel is also updated according to board state:
+
+- Yellow = Connecting
+- Green = Connected
+- Red = Error
+- Blue = Receiving
 
 ## How to flash/install
 
